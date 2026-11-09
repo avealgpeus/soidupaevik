@@ -12,9 +12,7 @@ Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluva
 - Sõidu muutmine – kasutaja saab vajadusel muuta juba salvestatud sõidu andmeid.
 - Sõidu kustutamine – kasutaja saab eemaldada ekslikult sisestatud või enam mittevajalikud sõidud.
 - Läbisõidu arvestus – tarkvara arvutab automaatselt sõitude põhjal läbitud kilomeetrite kogusumma.
-- Sõidupäeviku eksportimine – kasutaja saab eksportida sõitude andmed Exceli või PDF-failina, et neid oleks lihtne edasi kasutada või esitada.
-
-
+- Sõidupäeviku eksportimine – kasutaja saab eksportida sõitude andmed Exceli või PDF-failina, et neid oleks lihtne edasi kasutada või esitada.<br>
 
 **Tehnoloogiad:**
 - HTML – veebilehe struktuuri ja vormide loomiseks.
