@@ -31,7 +31,7 @@ Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluva
 - Testimine – kõigi funktsioonide kontrollimine ja vigade parandamine.
 - Lõplik viimistlus – kasutajaliidese parandamine ja projekti dokumenteerimine.
 
-**Valmisoleku kriteeriumid: **
+**Valmisoleku kriteeriumid:**
 Projekt loetakse valmis, kui:
 - Kasutaja saab sõidupäevikusse uusi sõite lisada.
 - Lisatud sõidud salvestatakse andmebaasi.
