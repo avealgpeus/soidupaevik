@@ -1,10 +1,16 @@
 **Projekti nimi:** Sõidupäevik – sõitude registreerimise tarkvara
 
+<br>
+
 **Eesmärk:** Projekti eesmärk on luua lihtne ja mugav tarkvara, mille abil saab kiiresti ja mugavalt registreerida autoga tehtud sõite, pidada digitaalset sõidupäevikut ning genereerida igakuiseid aruandeid.
 
 Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluvat aega ja muudab sõitude arvestuse lihtsamaks. Kasutaja ei pea enam sõite paberile kirjutama, vaid saab kogu vajaliku info sisestada ühte keskkonda.
 
+<br>
+
 **Sihtgrupp:** Inimesed, kellel on vaja pidada sõidupäevikut raamatupidamise või kulude arvestuse jaoks.
+
+<br>
 
 **Funktsionaalsus:**
 - Sõidu lisamine – kasutaja saab sisestada sõidu kuupäeva, algus- ja lõpp-punkti, sõidu eesmärgi ning läbisõidu kilomeetrites.
