@@ -14,12 +14,16 @@ Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluva
 - Läbisõidu arvestus – tarkvara arvutab automaatselt sõitude põhjal läbitud kilomeetrite kogusumma.
 - Sõidupäeviku eksportimine – kasutaja saab eksportida sõitude andmed Exceli või PDF-failina, et neid oleks lihtne edasi kasutada või esitada.
 
+<br>
+
 **Tehnoloogiad:**
 - HTML – veebilehe struktuuri ja vormide loomiseks.
 - CSS – veebilehe kujundamiseks ja kasutajasõbraliku välimuse loomiseks.
 - JavaScript – sõitude lisamise, muutmise, kustutamise ja läbisõidu arvutamise funktsioonide loomiseks.
 - LocalStorage – sisestatud sõitude salvestamiseks veebilehitsejasse.
 - Git ja GitHub – projekti versioonihalduseks ja lähtekoodi säilitamiseks.
+
+<br>
 
 **Teostusplaan:**
 - Planeerimine – projekti eesmärgi, funktsioonide ja kasutajavaate läbimõtlemine.
@@ -31,7 +35,7 @@ Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluva
 - Testimine – kõigi funktsioonide kontrollimine ja vigade parandamine.
 - Lõplik viimistlus – kasutajaliidese parandamine ja projekti dokumenteerimine.
 
-
+<br>
 
 **Valmisoleku kriteeriumid:**
 
