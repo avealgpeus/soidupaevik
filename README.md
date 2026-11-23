@@ -47,7 +47,7 @@ Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluva
 
 Projekt loetakse valmis, kui:
 - Kasutaja saab sõidupäevikusse uusi sõite lisada.
-- Lisatud sõidud salvestatakse andmebaasi.
+- Lisatud sõidud salvestatakse kasutaja veebilehitseja LocalStorage’isse ning säilivad ka pärast lehe sulgemist ja uuesti avamist.
 - Kasutaja saab olemasolevaid sõite vaadata, muuta ja kustutada.
 - Läbitud kilomeetrite kogusumma arvutatakse automaatselt ja korrektselt.
 - Kasutaja saab sõite kuupäeva järgi filtreerida.
