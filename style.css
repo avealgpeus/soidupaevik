@@ -1,0 +1,376 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #1f2933;
+}
+
+.rakendus {
+  width: min(960px, calc(100% - 32px));
+  margin: 48px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgb(31 41 51 / 10%);
+}
+
+h1 {
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 32px;
+  font-size: 1.3rem;
+}
+
+.lehe-pais p {
+  color: #52606d;
+}
+
+.üldandmed {
+  margin-top: 28px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f0f4f8;
+}
+
+.üldandmed h2 {
+  margin-top: 0;
+}
+
+.üldandmete-väljad {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.täislaius {
+  grid-column: 1 / -1;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #9aa5b1;
+  border-radius: 6px;
+  font: inherit;
+  resize: vertical;
+}
+
+input[readonly],
+textarea[readonly] {
+  background-color: #ffffff;
+  color: #52606d;
+}
+
+.kokkuvote {
+  display: grid;
+  grid-template-columns: 1fr minmax(230px, 300px);
+  gap: 24px;
+  align-items: start;
+  margin-top: 32px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #e6f6ef;
+}
+
+.kokkuvote h2,
+.kokkuvote p {
+  margin: 0;
+}
+
+.kuu-navigeerimine {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 10px;
+}
+
+.kuu-navigeerimine h2 {
+  min-width: 0;
+}
+
+.kuu-nupp {
+  margin: 0;
+  padding: 7px 12px;
+  font-size: 1.1rem;
+}
+
+.kokkuvote p {
+  margin-top: 10px;
+}
+
+.summa-kokku {
+  font-size: 1.15rem;
+}
+
+.maksimumi-hoiatus {
+  color: #b42318;
+  font-weight: 700;
+}
+
+.kuu-kalender {
+  margin: 0;
+}
+
+.kalendri-nädalapäevad,
+.kalendri-päevad {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.kalendri-nädalapäevad {
+  margin-bottom: 6px;
+  color: #52606d;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.kalendri-päev,
+.kalendri-tühi {
+  min-height: 36px;
+  border-radius: 6px;
+}
+
+.kalendri-päev {
+  display: grid;
+  place-items: center;
+  background-color: #ffffff;
+  font-weight: 700;
+}
+
+.kalendri-päev--sõiduga {
+  background-color: #167a4a;
+  color: #ffffff;
+}
+
+.kalendri-selgitus {
+  margin-top: 10px;
+  color: #52606d;
+  font-size: 0.9rem;
+}
+
+.vormi-väljad {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.arvutatud-läbisõit {
+  margin: 20px 0 0;
+  font-weight: 700;
+}
+
+.arvutatud-läbisõit--vigane {
+  color: #b42318;
+}
+
+.vormi-teade {
+  margin: 16px 0 0;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background-color: #fdecec;
+  color: #b42318;
+}
+
+.vormi-teade:empty {
+  display: none;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  font-weight: 600;
+}
+
+.välja-pealkiri {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.viimase-andme-nupp {
+  margin: 0;
+  padding: 4px 8px;
+  background-color: #829ab1;
+  font-size: 0.8rem;
+}
+
+.viimase-andme-nupp:hover {
+  background-color: #627d98;
+}
+
+.viimase-andme-nupp:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #9aa5b1;
+  border-radius: 6px;
+  font: inherit;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 6px;
+  background-color: #167a4a;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0f6139;
+}
+
+.vormi-tegevused {
+  display: flex;
+  gap: 12px;
+}
+
+.teisene-nupp,
+.tabeli-nupp {
+  background-color: #829ab1;
+}
+
+.teisene-nupp:hover,
+.tabeli-nupp:hover {
+  background-color: #627d98;
+}
+
+.tabeli-nupp {
+  margin: 0 6px 0 0;
+  min-width: 36px;
+  padding: 7px 9px;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.tegevuste-lahter {
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.tegevuste-lahter .tabeli-nupp {
+  margin: 0;
+}
+
+#üldandmete-nupp {
+  margin-top: 16px;
+}
+
+.kustuta-nupp {
+  background-color: #e07a7a;
+}
+
+.kustuta-nupp:hover {
+  background-color: #c95d5d;
+}
+
+.tabeli-kerimine {
+  margin-top: 32px;
+  overflow-x: auto;
+}
+
+.sõitude-filter {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.filtri-tegevused {
+  display: flex;
+  gap: 12px;
+  padding-top: 26px;
+}
+
+.filtri-tegevused button {
+  margin: 0;
+}
+
+.ekspordi-tegevused {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.ekspordi-tegevused button {
+  margin: 0;
+}
+
+.filtri-kuupäev {
+  position: relative;
+}
+
+.kuupäeva-kiirvalikud {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+.kuupäeva-kiirvalikud button {
+  margin: 0;
+  padding: 7px 10px;
+  background-color: #829ab1;
+  font-size: 0.85rem;
+}
+
+.kuupäeva-kiirvalikud button:hover {
+  background-color: #627d98;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #d9e2ec;
+  text-align: left;
+}
+
+th {
+  background-color: #f0f4f8;
+}
+
+td[colspan] {
+  color: #52606d;
+  text-align: center;
+}
+
+tfoot {
+  background-color: #f0f4f8;
+  font-weight: 700;
+}
+
+tfoot td {
+  border-top: 2px solid #9aa5b1;
+}
+
+@media (max-width: 640px) {
+  .kokkuvote {
+    grid-template-columns: 1fr;
+  }
+
+  .kuu-navigeerimine h2 {
+    font-size: 1.15rem;
+  }
+}

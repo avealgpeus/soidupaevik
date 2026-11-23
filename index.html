@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="et">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sõidupäevik</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="rakendus">
+      <header class="lehe-pais">
+        <h1>Sõidupäevik</h1>
+        <p>Registreeri ja halda autoga tehtud sõite mugavalt ja kiirelt.</p>
+      </header>
+
+      <section class="üldandmed" aria-labelledby="üldandmete-pealkiri">
+        <h2 id="üldandmete-pealkiri">Üldandmed</h2>
+
+        <form id="üldandmete-vorm" novalidate>
+          <div class="üldandmete-väljad">
+            <label>
+              Ettevõte
+              <input type="text" id="ettevõte" name="ettevõte" required />
+            </label>
+
+            <label>
+              Kasutaja
+              <input type="text" id="kasutaja" name="kasutaja" required />
+            </label>
+
+            <label>
+              Amet
+              <input type="text" id="amet" name="amet" required />
+            </label>
+
+            <label>
+              Auto reg.nr.
+              <input type="text" id="auto-reg-nr" name="autoRegNr" required />
+            </label>
+
+            <label>
+              Km. hind
+              <input
+                type="number"
+                id="km-hind"
+                name="kmHind"
+                min="0"
+                step="0.01"
+                required
+              />
+            </label>
+
+            <label class="täislaius">
+              Lisainfo sõitude kohta
+              <input type="text" id="lisainfo" name="lisainfo" />
+            </label>
+          </div>
+
+          <p class="vormi-teade" id="üldandmete-teade" role="alert"></p>
+          <button type="submit" id="üldandmete-nupp" class="tabeli-nupp">
+            Salvesta üldandmed
+          </button>
+        </form>
+      </section>
+
+      <section aria-labelledby="vormi-pealkiri">
+        <h2 id="vormi-pealkiri">Lisa sõit</h2>
+
+        <form id="sõidu-vorm" novalidate>
+          <div class="vormi-väljad">
+            <label>
+              Kuupäev
+              <input type="date" id="kuupäev" name="kuupäev" required />
+            </label>
+
+            <label>
+              <span class="välja-pealkiri">
+                Marsruut
+                <button
+                  type="button"
+                  id="kasuta-viimast-marsruuti"
+                  class="viimase-andme-nupp"
+                >
+                  Viimane
+                </button>
+              </span>
+              <input
+                type="text"
+                id="marsruut"
+                name="marsruut"
+                required
+              />
+            </label>
+
+            <label>
+              <span class="välja-pealkiri">
+                Sõidu eesmärk
+                <button
+                  type="button"
+                  id="kasuta-viimast-eesmärki"
+                  class="viimase-andme-nupp"
+                >
+                  Viimane
+                </button>
+              </span>
+              <input type="text" id="eesmärk" name="eesmärk" required />
+            </label>
+
+            <label>
+              <span class="välja-pealkiri">
+                Spidomeetri algnäit
+                <button
+                  type="button"
+                  id="kasuta-viimast-lõppnäitu"
+                  class="viimase-andme-nupp"
+                >
+                  Viimane
+                </button>
+              </span>
+              <input
+                type="number"
+                id="algNäit"
+                name="algNäit"
+                min="0"
+                step="0.1"
+                required
+              />
+            </label>
+
+            <label>
+              Spidomeetri lõppnäit
+              <input
+                type="number"
+                id="lõppNäit"
+                name="lõppNäit"
+                min="0"
+                step="0.1"
+                required
+              />
+            </label>
+          </div>
+
+          <p class="arvutatud-läbisõit">
+            Sõidu läbisõit: <output id="arvutatud-kilomeetrid">0</output> km
+          </p>
+          <p class="vormi-teade" id="vormi-teade" role="alert"></p>
+          <div class="vormi-tegevused">
+            <button type="submit" id="salvesta-nupp">Lisa sõit</button>
+            <button type="button" id="tühista-muutmine" class="teisene-nupp" hidden>
+              Tühista muutmine
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="kokkuvote" aria-labelledby="kokkuvote-pealkiri">
+        <div class="kokkuvõtte-andmed">
+          <div class="kuu-navigeerimine">
+            <button
+              type="button"
+              id="eelmine-kuu"
+              class="tabeli-nupp kuu-nupp"
+              aria-label="Eelmine kuu"
+            >
+              ←
+            </button>
+            <h2 id="kokkuvote-pealkiri">
+              <span id="kuu-pealkiri">Läbisõit sel kuul: </span>
+              <strong id="kuu-läbisõit">0 km</strong>
+            </h2>
+            <button
+              type="button"
+              id="järgmine-kuu"
+              class="tabeli-nupp kuu-nupp"
+              aria-label="Järgmine kuu"
+            >
+              →
+            </button>
+          </div>
+          <p class="summa-kokku">
+            Summa kokku: <strong id="kuu-summa">0,00 €</strong>
+            <span id="maksimumi-hoiatus" class="maksimumi-hoiatus" hidden>
+              → 335 €
+            </span>
+          </p>
+          <p>Hüvitise maksimummäär kuus: 335 €.</p>
+        </div>
+
+        <div id="kuu-kalender" class="kuu-kalender" aria-label="Kuu kalender">
+          <div class="kalendri-nädalapäevad" aria-hidden="true">
+            <span>E</span><span>T</span><span>K</span><span>N</span><span>R</span><span>L</span><span>P</span>
+          </div>
+          <div id="kalendri-päevad" class="kalendri-päevad"></div>
+          <p class="kalendri-selgitus">Roheline kuupäev sisaldab registreeritud sõitu.</p>
+        </div>
+      </section>
+
+      <section aria-labelledby="sõitude-pealkiri">
+        <h2 id="sõitude-pealkiri">Sõidud</h2>
+
+        <form id="sõitude-filter" class="sõitude-filter" novalidate>
+          <label class="filtri-kuupäev">
+            Alguskuupäev
+            <input
+              type="date"
+              id="filtri-algus"
+              name="filtriAlgus"
+              aria-expanded="false"
+              aria-controls="kuupäeva-kiirvalikud"
+            />
+            <div id="kuupäeva-kiirvalikud" class="kuupäeva-kiirvalikud" hidden>
+              <button type="button" id="praegune-kuu-filter">Praegune kuu</button>
+              <button type="button" id="eelmine-kuu-filter">Eelmine kuu</button>
+            </div>
+          </label>
+
+          <label>
+            Lõppkuupäev
+            <input type="date" id="filtri-lõpp" name="filtriLõpp" />
+          </label>
+
+          <div class="filtri-tegevused">
+            <button type="submit">Filtreeri</button>
+            <button type="button" id="tühjenda-filter" class="teisene-nupp">
+              Tühjenda filter
+            </button>
+          </div>
+        </form>
+        <p class="vormi-teade" id="filtri-teade" role="alert"></p>
+        <div class="ekspordi-tegevused">
+          <button type="button" id="ekspordi-csv">Ekspordi CSV</button>
+          <button type="button" id="ekspordi-pdf">Ekspordi PDF</button>
+        </div>
+
+        <div class="tabeli-kerimine">
+          <table>
+            <thead>
+              <tr>
+                <th>Kuupäev</th>
+                <th>Marsruut</th>
+                <th>Eesmärk</th>
+                <th>Spidomeetri algnäit</th>
+                <th>Spidomeetri lõppnäit</th>
+                <th>KM</th>
+                <th aria-label="Tegevused"></th>
+              </tr>
+            </thead>
+            <tbody id="sõitude-nimekiri">
+              <tr>
+                <td colspan="7">Sõite ei ole veel lisatud.</td>
+              </tr>
+            </tbody>
+            <tfoot id="filtri-kokkuvõte"></tfoot>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
