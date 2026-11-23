@@ -78,10 +78,12 @@ Projekt loetakse valmis, kui:
    git clone https://github.com/KASUTAJA/SOIDUPAEVIK.git
 
 2. Ava projekti kaust
-   cd SOIDUPAEVIK
+   
+ cd SOIDUPAEVIK
 
-3. Ava kaust Visual Studio Code’is.
-   code .
+4. Ava kaust Visual Studio Code’is.
+
+ code .
 
    4. Ava fail index.html.
 
