@@ -67,3 +67,35 @@ Projekt loetakse valmis, kui:
 | Filtreeritud perioodi läbisõit arvutatakse automaatselt. | ✅ |
 | Sõitude andmeid saab eksportida CSV- ja PDF-failina. | ✅ |
 | Tarkvara töötab korrektselt ja seda on lihtne kasutada. | ✅ |
+
+<br>
+
+**Käivitamine:**
+
+1. Klooni projekt oma arvutisse.
+
+   ```bash
+   git clone https://github.com/KASUTAJA/SOIDUPAEVIK.git
+
+2. Ava projekti kaust
+   cd SOIDUPAEVIK
+
+3. Ava kaust Visual Studio Code’is.
+   code .
+
+   4. Ava fail index.html.
+
+5. Käivita projekt Visual Studio Code’i Live Serveri laiendusega või ava index.html otse veebibrauseris.
+
+6. 
+   Nõuded
+Projekti käivitamiseks on vaja ainult veebibrauserit. Rakendus ei vaja eraldi serverit ega andmebaasi, sest sõitude andmed salvestatakse brauseri LocalStorage’i.
+
+**Kasutamine:**
+   1. Sisesta üldandmed ja vajuta **Salvesta üldandmed**.
+2. Lisa sõidu kuupäev, marsruut, eesmärk ning spidomeetri alg- ja lõppnäit.
+3. Rakendus arvutab läbisõidu automaatselt.
+4. Vajuta **Lisa sõit**.
+5. Sõitude tabelis saab kirjeid pliiatsiikooniga muuta ja prügikastiikooniga kustutada.
+6. Kuupäevavahemiku abil saab tabelis sõite filtreerida.
+7. Kasuta nuppe **Ekspordi CSV** või **Ekspordi PDF**, et andmeid eksportida.
