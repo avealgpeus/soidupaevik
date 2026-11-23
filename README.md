@@ -70,7 +70,7 @@ Projekt loetakse valmis, kui:
 
 <br>
 
-**Käivitamine:**
+
 ## Projekti käivitamine
 
 1. Klooni projekt.
@@ -87,7 +87,7 @@ Projekt loetakse valmis, kui:
 Nõuded
 Projekti käivitamiseks on vaja ainult veebibrauserit. Rakendus ei vaja eraldi serverit ega andmebaasi, sest sõitude andmed salvestatakse brauseri LocalStorage’i.
 
-**Kasutamine:**
+## **Kasutamine:**
    1. Sisesta üldandmed ja vajuta **Salvesta üldandmed**.
 2. Lisa sõidu kuupäev, marsruut, eesmärk ning spidomeetri alg- ja lõppnäit.
 3. Rakendus arvutab läbisõidu automaatselt.
