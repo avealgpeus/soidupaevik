@@ -89,8 +89,7 @@ Projekt loetakse valmis, kui:
 
 5. Käivita projekt Visual Studio Code’i Live Serveri laiendusega või ava index.html otse veebibrauseris.
 
-6. 
-   Nõuded
+Nõuded
 Projekti käivitamiseks on vaja ainult veebibrauserit. Rakendus ei vaja eraldi serverit ega andmebaasi, sest sõitude andmed salvestatakse brauseri LocalStorage’i.
 
 **Kasutamine:**
