@@ -1,18 +1,18 @@
-## **Projekti nimi:** Sõidupäevik – sõitude registreerimise tarkvara
+**Projekti nimi:** Sõidupäevik – sõitude registreerimise tarkvara
 
 <br>
 
-## **Eesmärk:** Projekti eesmärk on luua lihtne ja mugav tarkvara, mille abil saab kiiresti ja mugavalt registreerida autoga tehtud sõite, pidada digitaalset sõidupäevikut ning genereerida igakuiseid aruandeid.
+**Eesmärk:** Projekti eesmärk on luua lihtne ja mugav tarkvara, mille abil saab kiiresti ja mugavalt registreerida autoga tehtud sõite, pidada digitaalset sõidupäevikut ning genereerida igakuiseid aruandeid.
 
 Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluvat aega ja muudab sõitude arvestuse lihtsamaks. Kasutaja ei pea enam sõite paberile kirjutama, vaid saab kogu vajaliku info sisestada ühte keskkonda.
 
 <br>
 
-## **Sihtgrupp:** Inimesed, kellel on vaja pidada sõidupäevikut raamatupidamise või kulude arvestuse jaoks.
+**Sihtgrupp:** Inimesed, kellel on vaja pidada sõidupäevikut raamatupidamise või kulude arvestuse jaoks.
 
 <br>
 
-## **Funktsionaalsus:**
+**Funktsionaalsus:**
 - Sõidu lisamine – kasutaja saab sisestada sõidu kuupäeva, algus- ja lõpp-punkti, sõidu eesmärgi ning läbisõidu kilomeetrites.
 - Sõitude vaatamine – kasutaja saab vaadata kõiki varasemalt sisestatud sõite kronoloogilises järjekorras.
 - Sõidu muutmine – kasutaja saab vajadusel muuta juba salvestatud sõidu andmeid.
@@ -22,7 +22,7 @@ Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluva
 
 <br>
 
-## **Tehnoloogiad:**
+**Tehnoloogiad:**
 - HTML – veebilehe struktuuri ja vormide loomiseks.
 - CSS – veebilehe kujundamiseks ja kasutajasõbraliku välimuse loomiseks.
 - JavaScript – sõitude lisamise, muutmise, kustutamise ja läbisõidu arvutamise funktsioonide loomiseks.
@@ -31,7 +31,7 @@ Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluva
 
 <br>
 
-## **Teostusplaan:**
+**Teostusplaan:**
 - Planeerimine – projekti eesmärgi, funktsioonide ja kasutajavaate läbimõtlemine.
 - Kujundamine – kasutajaliidese esialgse kujunduse loomine.
 - Veebilehe struktuuri loomine – HTML-i ja CSS-i abil põhivaadete arendamine.
@@ -43,7 +43,7 @@ Tarkvara aitab vähendada käsitsi täidetava sõidupäeviku koostamisele kuluva
 
 <br>
 
-## **Valmisoleku kriteeriumid:**
+**Valmisoleku kriteeriumid:**
 
 Projekt loetakse valmis, kui:
 - Kasutaja saab sõidupäevikusse uusi sõite lisada.
