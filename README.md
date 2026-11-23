@@ -53,3 +53,17 @@ Projekt loetakse valmis, kui:
 - Kasutaja saab sõite kuupäeva järgi filtreerida.
 - Sõitude andmeid saab eksportida PDF- või Excel-failina.
 - Tarkvara töötab korrektselt ja seda on lihtne kasutada.
+
+<br>
+
+**Valmisoleku seis:**
+| Valmisoleku kriteerium | Seis |
+|---|---|
+| Kasutaja saab sõidupäevikusse uusi sõite lisada. | ✅ |
+| Lisatud sõidud salvestatakse LocalStorage’isse. | ✅ |
+| Kasutaja saab olemasolevaid sõite vaadata, muuta ja kustutada. | ✅ |
+| Läbitud kilomeetrite kogusumma arvutatakse automaatselt ja korrektselt. | ✅ |
+| Kasutaja saab sõite kuupäeva järgi filtreerida. | ✅ |
+| Filtreeritud perioodi läbisõit arvutatakse automaatselt. | ✅ |
+| Sõitude andmeid saab eksportida CSV- ja PDF-failina. | ✅ |
+| Tarkvara töötab korrektselt ja seda on lihtne kasutada. | ✅ |
