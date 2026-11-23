@@ -71,22 +71,17 @@ Projekt loetakse valmis, kui:
 <br>
 
 **Käivitamine:**
+## Projekti käivitamine
 
-1. Klooni projekt oma arvutisse.
+1. Klooni projekt.
 
    ```bash
-   git clone https://github.com/avealgpeus/SOIDUPAEVIK.git
-
-2. Ava projekti kaust
-   
- cd SOIDUPAEVIK
-
-4. Ava kaust Visual Studio Code’is.
-
- code .
-
-   4. Ava fail index.html.
-
+   git clone https://github.com/KASUTAJA/SOIDUPAEVIK.git
+2. Ava projekti kaust.
+   cd SOIDUPAEVIK
+3. Ava kaust Visual Studio Code’is.
+   code .
+4. Ava fail index.html.
 5. Käivita projekt Visual Studio Code’i Live Serveri laiendusega või ava index.html otse veebibrauseris.
 
 Nõuded
