@@ -83,7 +83,7 @@ Projekt loetakse valmis, kui:
 4. Ava kaust Visual Studio Code’is.
    ```bash
    code .
-6. Ava fail <index.html>.
+6. Ava fail `index.html>`.
 7. Käivita projekt Visual Studio Code’i Live Serveri laiendusega või ava <index.html> otse veebibrauseris.
 
 Nõuded
