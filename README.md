@@ -95,4 +95,4 @@ Projekti käivitamiseks on vaja ainult veebibrauserit. Rakendus ei vaja eraldi s
 5. Sõitude tabelis saab kirjeid pliiatsiikooniga muuta ja prügikastiikooniga kustutada.
 6. Kuupäevavahemiku abil saab tabelis sõite filtreerida.
 7. Kasuta nuppe **Ekspordi CSV** või **Ekspordi PDF**, et andmeid eksportida.
-8. **Kustuta kou info** nupu kaudu on võimalik kustutada nii üldandmed kui ka sisestatud sõidud.
+8. **Kustuta kogu info** nupu kaudu on võimalik kustutada nii üldandmed kui ka sisestatud sõidud.
