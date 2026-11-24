@@ -78,11 +78,13 @@ Projekt loetakse valmis, kui:
    ```bash
    git clone https://github.com/KASUTAJA/SOIDUPAEVIK.git
 2. Ava projekti kaust.
+   ```bash
    cd SOIDUPAEVIK
-3. Ava kaust Visual Studio Code’is.
+4. Ava kaust Visual Studio Code’is.
+   ```bash
    code .
-4. Ava fail index.html.
-5. Käivita projekt Visual Studio Code’i Live Serveri laiendusega või ava index.html otse veebibrauseris.
+6. Ava fail ```bash index.html.
+7. Käivita projekt Visual Studio Code’i Live Serveri laiendusega või ava index.html otse veebibrauseris.
 
 Nõuded
 Projekti käivitamiseks on vaja ainult veebibrauserit. Rakendus ei vaja eraldi serverit ega andmebaasi, sest sõitude andmed salvestatakse brauseri LocalStorage’i.
