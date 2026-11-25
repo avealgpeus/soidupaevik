@@ -1,5 +1,27 @@
 # Sõidupäeviku töölogi
 
+## 2026-11-25
+
+- Kasutaja soovis, et eelseadistatud sõidu lisamise nupp vastaks välimuselt kuupäevafiltri nupule „Praegune kuu”. Muutsin nupu samaks sinakashalliks, sama polstri ja kirjasuurusega nupuks. Ilma varasemate sõitudeta jääb nupp endiselt keelatuks, kuid on nüüd poolläbipaistev.
+
+## 2026-11-24
+
+- Kasutaja soovis eelseadistatud sõidu lisamise rea ja kuupäevavälja vahele tühja rida. Lisasingi nupu alla 16-pikslise välisvahe, et järgmine vormirida ei algaks kohe selle järel.
+- Esimene stiili ja töölogi ühine muutmispaik ei rakendunud, sest töölogi fail ei olnud paigas eraldi failiplokina määratud. Kordusmuudatus kasutas korrektseid failiplokke.
+
+- Kasutaja soovis sõidu lisamise vormilt eemaldada kolm eraldi „Viimane” nuppu ja asendada need ühe eelseadistatud sõidu lisamise reaga. Lisasin „Lisa sõit” pealkirja alla samas suuruses klikitava rea „Eelseadistatud sõidu lisamine”. See täidab marsruudiks „Viiratsi - Väike-Rakke - Viiratsi”, eesmärgiks „Sõit tööle/koju”, kasutab algnäiduna kuupäeva järgi viimase sõidu lõppnäitu ja määrab lõppnäidu sellest 86 km võrra suuremaks. Ilma varasema sõiduta on rida keelatud.
+
+- Kasutaja muutis eelmist paigutussoovi enne edasise kujunduse tegemist: üldandmed peavad jääma lehe ülaossa, kuid vorm peab avanema ainult nupust. Tõstsin vormi tagasi päise järele, lisasin nupu „Üldandmed” ning peitsin vormi vaikimisi. Nupp avab ja sulgeb sisu ning annab abitehnoloogiale teada avatud olekust.
+- Enne muudatust kasutasin ebatäpset tekstotsingu regulaaravaldist, mis ei läbinud PowerShelli kontrolli. Korduskontroll õnnestus ning kinnitas üldandmete, stiilide ja sündmusekäsitlejate asukohad.
+
+- Kasutaja leidis, et üldandmete muutmine ei ole igapäevane tegevus ja palus selle lehel allapoole tõsta. Paigutasin üldandmete vormi sõitude nimekirja ning ekspordivõimaluste järele. Lehe ülaosas on nüüd esmalt igapäevane sõidu lisamine, seejärel kuu kokkuvõte ja sõitude ülevaade.
+
+- Kasutaja soovis lisada kohustusliku välja tärni ka kuupäeva juurde ning hoida tärni koos väljasildiga samal real. Paigutasin üldandmete, kuupäeva ja spidomeetri lõppnäidu sildid eraldi painduvasse tekstiplokki ning lisasin kuupäevale punase tärni. Nii ei lähe tärn ruudustikupaigutuse tõttu enam eraldi reale.
+
+- Kasutaja soovis tähistada kohustuslikud väljad tärniga. Lisasin punase tärni ettevõtte, kasutaja, ameti, auto registrinumbri, km-hinna, marsruudi, sõidu eesmärgi ning spidomeetri alg- ja lõppnäidu siltidele.
+- Kasutaja soovis lehe allossa nuppu kogu info kustutamiseks. Lisasin nupu „Kustuta kogu info” ja kinnitusakna küsimusega „Kas oled kindel, et soovid kogu info kustutada?” Valikud on „OK” ja „Tühista”. Kinnitamisel eemaldatakse Sõidupäeviku üldandmed ja sõidud LocalStorage'ist ning kasutajaliides lähtestatakse.
+- Kasutaja soovis README käivitamisjuhiste sammude lahtiseletamist. Selgitasin projekti GitHubist kloonimise, projekti kausta avamise, Visual Studio Code'i käivitamise ning veebirakenduse avamise ja käitamise samme.
+
 ## 2026-11-23
 
 - Kasutaja soovis GitHubi README jaoks projekti käivitamise juhiseid. Koostasin staatilisele veebirakendusele sobivad sammud projekti kloonimiseks, kausta avamiseks ning `index.html` faili käivitamiseks Visual Studio Code'i Live Serveri või brauseri kaudu.
