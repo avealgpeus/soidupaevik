@@ -2,6 +2,12 @@
 
 ## 2026-11-25
 
+- Kasutaja soovis ühtlustada eelseadistuse ning kuupäevafiltri kiirvalikute nuppude suuruse seadistamise nupuga. Muutsin „Eelseadistatud sõidu lisamine”, „Praegune kuu” ja „Eelmine kuu” nupud sama kirjasuuruse, polstri ja minimaalsete mõõtmetega nagu „Eelseadistatud sõidu seadistamine”.
+
+- Kasutaja soovis eelseadistatud sõidu andmed muuta seadistatavaks. Lisasin sõidu lisamise osasse nupu „Eelseadistatud sõidu seadistamine”, mis avab eraldi akna marsruudi ja sõidu eesmärgi sisestamiseks. Need kaks välja on kohustuslikud. Akna valikuga saab määrata, kas algnäit võetakse kuupäeva järgi viimaselt sõidult, ning soovi korral lisada sõidu pikkuse.
+- Seadistus salvestatakse eraldi LocalStorage'i kirjena. Eelseadistatud sõidu lisamisel täidetakse seadistatud marsruut ja eesmärk ning linnukese korral viimase kuupäevaga sõidu lõppnäit. Kui seadistuses on pikkus ja algnäit olemas, arvutatakse lõppnäit automaatselt. Kogu info kustutamine eemaldab nüüd ka selle seadistuse.
+- Seadistusakna kohustuslike väljade tärnid paigutasin koos väljasiltidega samale reale, et need järgiksid ülejäänud vormi kohustuslike väljade kujundust.
+
 - Kasutaja soovis, et eelseadistatud sõidu lisamise nupp vastaks välimuselt kuupäevafiltri nupule „Praegune kuu”. Muutsin nupu samaks sinakashalliks, sama polstri ja kirjasuurusega nupuks. Ilma varasemate sõitudeta jääb nupp endiselt keelatuks, kuid on nüüd poolläbipaistev.
 
 ## 2026-11-24

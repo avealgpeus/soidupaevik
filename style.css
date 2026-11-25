@@ -209,14 +209,15 @@ label {
 }
 
 .eelseadistatud-sõidu-nupp {
-  margin: 0 0 16px;
-  padding: 7px 10px;
+  margin: 0 6px 16px 0;
+  min-width: 36px;
+  padding: 7px 9px;
   border: 0;
   background-color: #829ab1;
   color: #ffffff;
   font: inherit;
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   text-decoration: none;
 }
 
@@ -227,6 +228,10 @@ label {
 .eelseadistatud-sõidu-nupp:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.eelseadistuse-avaja {
+  margin: 0 0 10px;
 }
 
 .viimase-andme-nupp:disabled {
@@ -348,9 +353,10 @@ button:hover {
 
 .kuupäeva-kiirvalikud button {
   margin: 0;
-  padding: 7px 10px;
+  min-width: 36px;
+  padding: 7px 9px;
   background-color: #829ab1;
-  font-size: 0.85rem;
+  font-size: 1.1rem;
 }
 
 .kuupäeva-kiirvalikud button:hover {
@@ -423,6 +429,18 @@ dialog h2 {
 
 .kinnituse-tegevused button {
   margin: 0;
+}
+
+.checkboxi-silt {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.checkboxi-silt input {
+  width: auto;
+  margin-top: 3px;
 }
 
 @media (max-width: 640px) {

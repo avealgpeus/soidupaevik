@@ -70,6 +70,13 @@
         <h2 id="vormi-pealkiri">Lisa sõit</h2>
         <button
           type="button"
+          id="eelseadistuse-avaja"
+          class="eelseadistuse-avaja tabeli-nupp"
+        >
+          Eelseadistatud sõidu seadistamine
+        </button>
+        <button
+          type="button"
           id="eelseadistatud-sõidu-nupp"
           class="eelseadistatud-sõidu-nupp"
         >
@@ -256,6 +263,33 @@
           OK
         </button>
       </div>
+    </dialog>
+
+    <dialog id="eelseadistuse-aken" aria-labelledby="eelseadistuse-pealkiri">
+      <h2 id="eelseadistuse-pealkiri">Eelseadistatud sõidu seadistamine</h2>
+      <form id="eelseadistuse-vorm" novalidate>
+        <label>
+          <span class="sildi-tekst">Marsruut <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
+          <input type="text" id="eelseadistuse-marsruut" name="marsruut" required />
+        </label>
+        <label>
+          <span class="sildi-tekst">Sõidu eesmärk <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
+          <input type="text" id="eelseadistuse-eesmärk" name="eesmärk" required />
+        </label>
+        <label class="checkboxi-silt">
+          <input type="checkbox" id="kasuta-viimast-lõppnäitu" name="kasutaViimastLõppnäitu" />
+          <span>Spidomeetri algnäiduks on viimati lisatud sõidu spidomeetri lõppnäit</span>
+        </label>
+        <label>
+          Sõidu pikkus
+          <input type="number" id="eelseadistuse-pikkus" name="sõiduPikkus" min="0.1" step="0.1" />
+        </label>
+        <p class="vormi-teade" id="eelseadistuse-teade" role="alert"></p>
+        <div class="kinnituse-tegevused">
+          <button type="button" id="tühista-eelseadistus" class="teisene-nupp">Tühista</button>
+          <button type="submit">Salvesta</button>
+        </div>
+      </form>
     </dialog>
 
     <script src="script.js"></script>

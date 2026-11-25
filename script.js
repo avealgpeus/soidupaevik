@@ -2,6 +2,7 @@
 
 const SALVESTUSE_VÕTI = "sõidupäeviku-sõidud";
 const ÜLDANDMETE_VÕTI = "sõidupäeviku-üldandmed";
+const EELSEADISTUSE_VÕTI = "sõidupäeviku-eelseadistus";
 const HÜVITISE_MAKSIMUMMÄÄR = 335;
 const kuuNimed = [
   "jaanuaris",
@@ -30,6 +31,11 @@ const eesmärgiSisend = document.getElementById("eesmärk");
 const algNäiduSisend = document.getElementById("algNäit");
 const lõppNäiduSisend = document.getElementById("lõppNäit");
 const eelseadistatudSõiduNupp = document.getElementById("eelseadistatud-sõidu-nupp");
+const eelseadistuseAvaja = document.getElementById("eelseadistuse-avaja");
+const eelseadistuseAken = document.getElementById("eelseadistuse-aken");
+const eelseadistuseVorm = document.getElementById("eelseadistuse-vorm");
+const eelseadistuseTeade = document.getElementById("eelseadistuse-teade");
+const tühistaEelseadistusNupp = document.getElementById("tühista-eelseadistus");
 const arvutatudLäbisõiduRida = document.querySelector(".arvutatud-läbisõit");
 const arvutatudKilomeetrid = document.getElementById("arvutatud-kilomeetrid");
 const vormiTeade = document.getElementById("vormi-teade");
@@ -66,6 +72,8 @@ let üldandmeteMuutmisrežiim = true;
 let valitudKuu = new Date(new Date().getFullYear(), new Date().getMonth(), 1);
 let filtriAlgus = "";
 let filtriLõpp = "";
+let eelseadistus = loeEelseadistus();
+let kasutatakseEelseadistust = false;
 
 kuupäevaSisend.value = tänaneKuupäev();
 laadiÜldandmed();
@@ -74,7 +82,7 @@ kuvaSõidud();
 sõiduVorm.addEventListener("submit", lisaSõit);
 üldandmeteVorm.addEventListener("submit", töötleÜldandmed);
 üldandmeteAvaja.addEventListener("click", lülitaÜldandmed);
-algNäiduSisend.addEventListener("input", kuvaArvutatudLäbisõit);
+algNäiduSisend.addEventListener("input", käsitleAlgNäiduMuutmist);
 lõppNäiduSisend.addEventListener("input", kuvaArvutatudLäbisõit);
 tühistaMuutmineNupp.addEventListener("click", lähtestaVorm);
 tühjendaFilterNupp.addEventListener("click", tühjendaFilter);
@@ -93,6 +101,9 @@ document.addEventListener("click", sulgeKiirvalikudVäljaspoolKlikil);
 csvEkspordiNupp.addEventListener("click", ekspordiCsv);
 pdfEkspordiNupp.addEventListener("click", ekspordiPdf);
 eelseadistatudSõiduNupp.addEventListener("click", lisaEelseadistatudSõit);
+eelseadistuseAvaja.addEventListener("click", avaEelseadistuseAken);
+eelseadistuseVorm.addEventListener("submit", salvestaEelseadistus);
+tühistaEelseadistusNupp.addEventListener("click", () => eelseadistuseAken.close());
 eelmineKuuNupp.addEventListener("click", () => muudaValitudKuud(-1));
 järgmineKuuNupp.addEventListener("click", () => muudaValitudKuud(1));
 kustutaKoguInfoNupp.addEventListener("click", () => koguInfoKinnitus.showModal());
@@ -117,7 +128,9 @@ function muudaValitudKuud(kuudeArv) {
 function kustutaKoguInfo() {
   localStorage.removeItem(SALVESTUSE_VÕTI);
   localStorage.removeItem(ÜLDANDMETE_VÕTI);
+  localStorage.removeItem(EELSEADISTUSE_VÕTI);
   sõidud = [];
+  eelseadistus = loeEelseadistus();
   filtriAlgus = "";
   filtriLõpp = "";
   üldandmeteVorm.reset();
@@ -304,6 +317,7 @@ function lähtestaVorm() {
   kuupäevaSisend.value = tänaneKuupäev();
   vormiTeade.textContent = "";
   muudetavaSõiduId = null;
+  kasutatakseEelseadistust = false;
   salvestaNupp.textContent = "Lisa sõit";
   tühistaMuutmineNupp.hidden = true;
   kuvaArvutatudLäbisõit();
@@ -317,23 +331,84 @@ function viimaseKuupäevagaSõit() {
 }
 
 function lisaEelseadistatudSõit() {
-  const sõit = viimaseKuupäevagaSõit();
-
-  if (!sõit) {
+  if (!onEelseadistusTäidetud()) {
     return;
   }
 
-  const algNäit = Number(sõit.lõppNäit);
-  marsruudiSisend.value = "Viiratsi - Väike-Rakke - Viiratsi";
-  eesmärgiSisend.value = "Sõit tööle/koju";
-  algNäiduSisend.value = algNäit;
-  lõppNäiduSisend.value = algNäit + 86;
+  kasutatakseEelseadistust = true;
+  marsruudiSisend.value = eelseadistus.marsruut;
+  eesmärgiSisend.value = eelseadistus.eesmärk;
+
+  if (eelseadistus.kasutaViimastLõppnäitu) {
+    const sõit = viimaseKuupäevagaSõit();
+    algNäiduSisend.value = sõit.lõppNäit;
+  }
+
+  uuendaEelseadistatudLõppnäitu();
   vormiTeade.textContent = "";
   kuvaArvutatudLäbisõit();
 }
 
 function uuendaEelseadistatudSõiduNuppu() {
-  eelseadistatudSõiduNupp.disabled = sõidud.length === 0;
+  const vajabVarasematSõitu = eelseadistus.kasutaViimastLõppnäitu;
+  eelseadistatudSõiduNupp.disabled =
+    !onEelseadistusTäidetud() || (vajabVarasematSõitu && sõidud.length === 0);
+}
+
+function käsitleAlgNäiduMuutmist() {
+  uuendaEelseadistatudLõppnäitu();
+  kuvaArvutatudLäbisõit();
+}
+
+function uuendaEelseadistatudLõppnäitu() {
+  const sõiduPikkus = Number(eelseadistus.sõiduPikkus);
+  const algNäit = Number(algNäiduSisend.value);
+
+  if (
+    kasutatakseEelseadistust &&
+    eelseadistus.sõiduPikkus !== "" &&
+    algNäiduSisend.value !== "" &&
+    Number.isFinite(sõiduPikkus) &&
+    Number.isFinite(algNäit)
+  ) {
+    lõppNäiduSisend.value = algNäit + sõiduPikkus;
+  }
+}
+
+function avaEelseadistuseAken() {
+  eelseadistuseVorm.elements.marsruut.value = eelseadistus.marsruut;
+  eelseadistuseVorm.elements.eesmärk.value = eelseadistus.eesmärk;
+  eelseadistuseVorm.elements.kasutaViimastLõppnäitu.checked =
+    eelseadistus.kasutaViimastLõppnäitu;
+  eelseadistuseVorm.elements.sõiduPikkus.value = eelseadistus.sõiduPikkus;
+  eelseadistuseTeade.textContent = "";
+  eelseadistuseAken.showModal();
+}
+
+function salvestaEelseadistus(sündmus) {
+  sündmus.preventDefault();
+  const marsruut = eelseadistuseVorm.elements.marsruut.value.trim();
+  const eesmärk = eelseadistuseVorm.elements.eesmärk.value.trim();
+
+  if (!marsruut || !eesmärk) {
+    eelseadistuseTeade.textContent = "Täida kõik kohustuslikud lahtrid.";
+    return;
+  }
+
+  eelseadistus = {
+    marsruut,
+    eesmärk,
+    kasutaViimastLõppnäitu:
+      eelseadistuseVorm.elements.kasutaViimastLõppnäitu.checked,
+    sõiduPikkus: eelseadistuseVorm.elements.sõiduPikkus.value,
+  };
+  localStorage.setItem(EELSEADISTUSE_VÕTI, JSON.stringify(eelseadistus));
+  eelseadistuseAken.close();
+  uuendaEelseadistatudSõiduNuppu();
+}
+
+function onEelseadistusTäidetud() {
+  return Boolean(eelseadistus.marsruut && eelseadistus.eesmärk);
 }
 
 function kuvaArvutatudLäbisõit() {
@@ -648,6 +723,7 @@ function alustaMuutmist(sõiduId) {
   }
 
   muudetavaSõiduId = sõiduId;
+  kasutatakseEelseadistust = false;
   kuupäevaSisend.value = sõit.kuupäev;
   document.getElementById("marsruut").value = sõit.marsruut;
   document.getElementById("eesmärk").value = sõit.eesmärk;
@@ -749,6 +825,36 @@ function loeSõidud() {
       : [];
   } catch {
     return [];
+  }
+}
+
+function loeEelseadistus() {
+  const salvestatudEelseadistus = localStorage.getItem(EELSEADISTUSE_VÕTI);
+
+  if (!salvestatudEelseadistus) {
+    return {
+      marsruut: "",
+      eesmärk: "",
+      kasutaViimastLõppnäitu: false,
+      sõiduPikkus: "",
+    };
+  }
+
+  try {
+    const loetudEelseadistus = JSON.parse(salvestatudEelseadistus);
+    return {
+      marsruut: String(loetudEelseadistus.marsruut ?? ""),
+      eesmärk: String(loetudEelseadistus.eesmärk ?? ""),
+      kasutaViimastLõppnäitu: Boolean(loetudEelseadistus.kasutaViimastLõppnäitu),
+      sõiduPikkus: String(loetudEelseadistus.sõiduPikkus ?? ""),
+    };
+  } catch {
+    return {
+      marsruut: "",
+      eesmärk: "",
+      kasutaViimastLõppnäitu: false,
+      sõiduPikkus: "",
+    };
   }
 }
 
