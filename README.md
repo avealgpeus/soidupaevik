@@ -89,10 +89,9 @@ Projekt loetakse valmis, kui:
 Nõuded - Projekti käivitamiseks on vaja ainult veebibrauserit. Rakendus ei vaja eraldi serverit ega andmebaasi, sest sõitude andmed salvestatakse brauseri LocalStorage’i.
 
 ## **Kasutamine**
-   1. Sisesta üldandmed ja vajuta **Salvesta üldandmed**. Üldandmeid on võimalik muuta **Muuda** nupu kaudu. Kohustuslik on lisada ettevõte, kasutaja, amet, auto reg.nr., km. hind.
-2. Lisa sõidu kuupäev, marsruut, eesmärk ning spidomeetri alg- ja lõppnäit.
-3. Rakendus arvutab läbisõidu automaatselt.
-4. Vajuta **Lisa sõit**.
+   1. **Üldandmed** nupu kaudu saab sisestada üldandmed  (vajuta **Salvesta üldandmed**). Üldandmeid on võimalik muuta **Muuda** nupu kaudu. Kohustuslik on lisada ettevõte, kasutaja, amet, auto reg.nr., km. hind.
+2. Lisa sõidu kuupäev, marsruut, eesmärk ning spidomeetri alg- ja lõppnäit. Rakendus arvutab läbisõidu automaatselt. Vajuta **Lisa sõit**.
+3. **Eelseadistatud sõidu seadistamine** nupu kaudu on võimalik seadistada kasutaja jaoks tihti kasutuselolev marsruut. **Eelseadistatud sõidu lisamine** nupu kaudu saab selle lisada.
 5. Sõitude tabelis saab kirjeid pliiatsiikooniga muuta ja prügikastiikooniga kustutada.
 6. Kuupäevavahemiku abil saab tabelis sõite filtreerida.
 7. Kasuta nuppe **Ekspordi CSV** või **Ekspordi PDF**, et andmeid eksportida.
