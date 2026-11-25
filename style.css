@@ -42,6 +42,14 @@ h2 {
   margin-top: 0;
 }
 
+.üldandmete-avaja {
+  margin: 0;
+}
+
+.üldandmete-avaja[aria-expanded="true"] {
+  margin-bottom: 20px;
+}
+
 .üldandmete-väljad {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -189,22 +197,36 @@ label {
   font-weight: 600;
 }
 
-.välja-pealkiri {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
+.kohustuslik-märgis {
+  color: #b42318;
 }
 
-.viimase-andme-nupp {
-  margin: 0;
-  padding: 4px 8px;
+.sildi-tekst {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  width: fit-content;
+}
+
+.eelseadistatud-sõidu-nupp {
+  margin: 0 0 16px;
+  padding: 7px 10px;
+  border: 0;
   background-color: #829ab1;
-  font-size: 0.8rem;
+  color: #ffffff;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
 }
 
-.viimase-andme-nupp:hover {
+.eelseadistatud-sõidu-nupp:hover:not(:disabled) {
   background-color: #627d98;
+}
+
+.eelseadistatud-sõidu-nupp:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .viimase-andme-nupp:disabled {
@@ -363,6 +385,44 @@ tfoot {
 
 tfoot td {
   border-top: 2px solid #9aa5b1;
+}
+
+.kogu-info-kustutamine {
+  margin-top: 32px;
+  text-align: right;
+}
+
+.kustuta-kogu-info-nupp {
+  background-color: #e07a7a;
+}
+
+.kustuta-kogu-info-nupp:hover {
+  background-color: #c95d5d;
+}
+
+dialog {
+  width: min(420px, calc(100% - 32px));
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 12px 32px rgb(31 41 51 / 25%);
+}
+
+dialog::backdrop {
+  background-color: rgb(31 41 51 / 45%);
+}
+
+dialog h2 {
+  margin-top: 0;
+}
+
+.kinnituse-tegevused {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.kinnituse-tegevused button {
+  margin: 0;
 }
 
 @media (max-width: 640px) {

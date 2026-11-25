@@ -13,77 +13,78 @@
         <p>Registreeri ja halda autoga tehtud sõite mugavalt ja kiirelt.</p>
       </header>
 
-      <section class="üldandmed" aria-labelledby="üldandmete-pealkiri">
-        <h2 id="üldandmete-pealkiri">Üldandmed</h2>
+      <section class="üldandmed" aria-label="Üldandmed">
+        <button
+          type="button"
+          id="üldandmete-avaja"
+          class="üldandmete-avaja"
+          aria-expanded="false"
+          aria-controls="üldandmete-sisu"
+        >
+          Üldandmed
+        </button>
 
-        <form id="üldandmete-vorm" novalidate>
-          <div class="üldandmete-väljad">
-            <label>
-              Ettevõte
-              <input type="text" id="ettevõte" name="ettevõte" required />
-            </label>
+        <div id="üldandmete-sisu" hidden>
+          <form id="üldandmete-vorm" novalidate>
+            <div class="üldandmete-väljad">
+              <label>
+                <span class="sildi-tekst">Ettevõte <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
+                <input type="text" id="ettevõte" name="ettevõte" required />
+              </label>
 
-            <label>
-              Kasutaja
-              <input type="text" id="kasutaja" name="kasutaja" required />
-            </label>
+              <label>
+                <span class="sildi-tekst">Kasutaja <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
+                <input type="text" id="kasutaja" name="kasutaja" required />
+              </label>
 
-            <label>
-              Amet
-              <input type="text" id="amet" name="amet" required />
-            </label>
+              <label>
+                <span class="sildi-tekst">Amet <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
+                <input type="text" id="amet" name="amet" required />
+              </label>
 
-            <label>
-              Auto reg.nr.
-              <input type="text" id="auto-reg-nr" name="autoRegNr" required />
-            </label>
+              <label>
+                <span class="sildi-tekst">Auto reg.nr. <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
+                <input type="text" id="auto-reg-nr" name="autoRegNr" required />
+              </label>
 
-            <label>
-              Km. hind
-              <input
-                type="number"
-                id="km-hind"
-                name="kmHind"
-                min="0"
-                step="0.01"
-                required
-              />
-            </label>
+              <label>
+                <span class="sildi-tekst">Km. hind <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
+                <input type="number" id="km-hind" name="kmHind" min="0" step="0.01" required />
+              </label>
 
-            <label class="täislaius">
-              Lisainfo sõitude kohta
-              <input type="text" id="lisainfo" name="lisainfo" />
-            </label>
-          </div>
+              <label class="täislaius">
+                Lisainfo sõitude kohta
+                <input type="text" id="lisainfo" name="lisainfo" />
+              </label>
+            </div>
 
-          <p class="vormi-teade" id="üldandmete-teade" role="alert"></p>
-          <button type="submit" id="üldandmete-nupp" class="tabeli-nupp">
-            Salvesta üldandmed
-          </button>
-        </form>
+            <p class="vormi-teade" id="üldandmete-teade" role="alert"></p>
+            <button type="submit" id="üldandmete-nupp" class="tabeli-nupp">
+              Salvesta üldandmed
+            </button>
+          </form>
+        </div>
       </section>
 
       <section aria-labelledby="vormi-pealkiri">
         <h2 id="vormi-pealkiri">Lisa sõit</h2>
+        <button
+          type="button"
+          id="eelseadistatud-sõidu-nupp"
+          class="eelseadistatud-sõidu-nupp"
+        >
+          Eelseadistatud sõidu lisamine
+        </button>
 
         <form id="sõidu-vorm" novalidate>
           <div class="vormi-väljad">
             <label>
-              Kuupäev
+              <span class="sildi-tekst">Kuupäev <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
               <input type="date" id="kuupäev" name="kuupäev" required />
             </label>
 
             <label>
-              <span class="välja-pealkiri">
-                Marsruut
-                <button
-                  type="button"
-                  id="kasuta-viimast-marsruuti"
-                  class="viimase-andme-nupp"
-                >
-                  Viimane
-                </button>
-              </span>
+              <span class="sildi-tekst">Marsruut <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
               <input
                 type="text"
                 id="marsruut"
@@ -93,30 +94,12 @@
             </label>
 
             <label>
-              <span class="välja-pealkiri">
-                Sõidu eesmärk
-                <button
-                  type="button"
-                  id="kasuta-viimast-eesmärki"
-                  class="viimase-andme-nupp"
-                >
-                  Viimane
-                </button>
-              </span>
+              <span class="sildi-tekst">Sõidu eesmärk <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
               <input type="text" id="eesmärk" name="eesmärk" required />
             </label>
 
             <label>
-              <span class="välja-pealkiri">
-                Spidomeetri algnäit
-                <button
-                  type="button"
-                  id="kasuta-viimast-lõppnäitu"
-                  class="viimase-andme-nupp"
-                >
-                  Viimane
-                </button>
-              </span>
+              <span class="sildi-tekst">Spidomeetri algnäit <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
               <input
                 type="number"
                 id="algNäit"
@@ -128,7 +111,7 @@
             </label>
 
             <label>
-              Spidomeetri lõppnäit
+              <span class="sildi-tekst">Spidomeetri lõppnäit <span class="kohustuslik-märgis" aria-hidden="true">*</span></span>
               <input
                 type="number"
                 id="lõppNäit"
@@ -254,7 +237,26 @@
           </table>
         </div>
       </section>
+
+      <section class="kogu-info-kustutamine" aria-label="Andmete haldamine">
+        <button type="button" id="kustuta-kogu-info" class="kustuta-kogu-info-nupp">
+          Kustuta kogu info
+        </button>
+      </section>
     </main>
+
+    <dialog id="kogu-info-kinnitus" aria-labelledby="kinnituse-pealkiri">
+      <h2 id="kinnituse-pealkiri">Kustuta kogu info</h2>
+      <p>Kas oled kindel, et soovid kogu info kustutada?</p>
+      <div class="kinnituse-tegevused">
+        <button type="button" id="tühista-kustutamine" class="teisene-nupp">
+          Tühista
+        </button>
+        <button type="button" id="kinnita-kustutamine" class="kustuta-kogu-info-nupp">
+          OK
+        </button>
+      </div>
+    </dialog>
 
     <script src="script.js"></script>
   </body>
