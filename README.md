@@ -76,7 +76,7 @@ Projekt loetakse valmis, kui:
 1. Klooni projekt.
 
    ```bash
-   git clone https://github.com/KASUTAJA/SOIDUPAEVIK.git
+   git clone https://github.com/avealgpeus/soidupaevik.git
 2. Ava projekti kaust.
    ```bash
    cd SOIDUPAEVIK
